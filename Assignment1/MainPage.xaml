@@ -1,0 +1,72 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Assignment1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <!-- <ScrollViewer> -->
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--TitlePanel contains the name of the application and page title-->
+            <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+                <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=AppResources.AppLabel1, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+                <TextBlock x:Name="PageTitle" Text="{Binding Path=AppResources.AppLabel2, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="48" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Height="639" HorizontalAlignment="Left" Margin="10,0,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="470" Orientation="Vertical">
+                <TextBlock Height="40" Name="textBlock1" Text="Suojaus ( näytä selitys )" Width="465" HorizontalAlignment="Stretch" TextAlignment="Left" Tap="textBlock1_Tap" FontStyle="Normal" FontWeight="Bold" Foreground="#FFFC5106" />
+                <RadioButton Content="{Binding Path=AppResources.RadioButton1String1, Source={StaticResource LocalizedStrings}}" Height="72" Margin="0" Name="rbPublic" VerticalAlignment="Top" GroupName="grpComputerType" BorderBrush="#BF22DE4D" IsChecked="True" Width="470" />
+                <TextBlock Height="0" Name="textBlock2" Text="" Width="468" HorizontalAlignment="Left" TextAlignment="Left" Tap="textBlock1_Tap" TextWrapping="Wrap" VerticalAlignment="Top" FlowDirection="LeftToRight" />
+                <RadioButton Content="{Binding Path=AppResources.RadioButton2String1, Source={StaticResource LocalizedStrings}}" Height="72" Margin="0" Name="rbPrivate" VerticalAlignment="Top" GroupName="grpComputerType" BorderBrush="#BF22DE4D" />
+                <TextBlock Height="0" Name="textBlock3" Text="" Width="465" HorizontalAlignment="Left" TextAlignment="Left" Tap="textBlock1_Tap" TextWrapping="Wrap" />
+                <CheckBox Content="{Binding Path=AppResources.CheckBoxString, Source={StaticResource LocalizedStrings}}" Height="72" Name="checkBox1" Width="467" FontSize="20" />
+            <Grid Height="195" Name="grid1" Width="463">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="106*" />
+                    <ColumnDefinition Width="357*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Left" Margin="10,12,0,0" Name="textBlock4" Text="{Binding Path=AppResources.UserNameString, Source={StaticResource LocalizedStrings}}" Width="96" TextWrapping="Wrap" />
+                <TextBlock Grid.Row="1" Height="41" HorizontalAlignment="Left" Margin="10,19,0,0" Name="textBlock5" Text="{Binding Path=AppResources.PasswordString, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="96" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" UseLayoutRounding="True" />
+                <TextBox Grid.Column="1" Height="75" HorizontalAlignment="Left" Name="textBox1" Text="" VerticalAlignment="Top" Width="360" Grid.RowSpan="2" />
+                <PasswordBox Grid.Column="1" Grid.Row="1" Height="75" HorizontalAlignment="Left" Name="passwordBox1" VerticalAlignment="Top" Width="360" Grid.RowSpan="2" />
+                <Button Content="{Binding Path=AppResources.SigInString, Source={StaticResource LocalizedStrings}}" Grid.Column="1" Grid.Row="2" Height="75" HorizontalAlignment="Left" Margin="125,0,0,0" Name="button1" VerticalAlignment="Top" Width="235" Foreground="White" BorderBrush="#FFFC5106" Background="#E5DD4206" Tap="button1_Tap" Click="button1_Click" />
+            </Grid>
+            <TextBlock Height="53" Name="textBlock8" Text="" Width="450" FontSize="36" />
+            <TextBlock Height="35" Name="textBlock6" Text="{Binding Path=AppResources.TextBlockString4, Source={StaticResource LocalizedStrings}}" Width="450" FontSize="26" />
+            <TextBlock Height="55" Name="textBlock7" Text="{Binding Path=AppResources.TextBlockString5, Source={StaticResource LocalizedStrings}}" Width="453" FontSize="16" />
+        </StackPanel>
+        <!--ContentPanel - place additional content here-->
+        </Grid>
+    <!-- </ScrollViewer> -->
+    
+            <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
